@@ -1,0 +1,2 @@
+cq_11
+-DCATKIN_DEVEL_PREFIX=/home/hsk/CQ/devel -DCMAKE_INSTALL_PREFIX=/home/hsk/CQ/install -G Unix Makefiles

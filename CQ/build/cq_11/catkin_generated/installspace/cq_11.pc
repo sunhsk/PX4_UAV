@@ -1,0 +1,8 @@
+prefix=/home/hsk/CQ/install
+
+Name: cq_11
+Description: Description of cq_11
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

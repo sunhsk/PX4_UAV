@@ -1,5 +1,16 @@
 import numpy as np
 
+
+formation_dict_3 = {"origin":np.array([[3,0,0],[0,3,0]]),"circle":np.array([[-1,1.732,0],[-1,-1.732,0]]),"triangle": np.array([[-1.5,-2.55,0],[1.5,-2.55,0]])}
+formation_dict_3["origin"] = np.transpose(formation_dict_3["origin"])
+formation_dict_3["circle"] = np.transpose(formation_dict_3["circle"])
+formation_dict_3["triangle"] = np.transpose(formation_dict_3["triangle"])
+
+formation_dict_4 = {"origin":np.array([[3,0,0],[0,3,0],[3,3,0]]),"circle_enemy": np.array([[-1.5,-2,1],[1.5,-2,1],[0,2,1]])}
+formation_dict_4["origin"] = np.transpose(formation_dict_4["origin"])
+formation_dict_4["circle_enemy"] = np.transpose(formation_dict_4["circle_enemy"])
+
+
 formation_dict_6 = {"origin":np.array([[3,0,0],[0,3,0],[3,3,0],[0,6,0],[3,6,0]]),"T":np.array([[4,0,0],[2,0,0],[2,0,-2],[2,0,-4],[2,0,-6]]) , "diamond": np.array([[2,2,-2],[2,-2,-2],[-2,-2,-2],[-2,2,-2],[0,0,-4]]), "triangle": np.array([[-3,0,-3],[3,0,-3],[-1.5,0,-1.5],[1.5,0,-1.5],[0,0,-3]])}
 formation_dict_6["origin"] = np.transpose(formation_dict_6["origin"])
 formation_dict_6["T"] = np.transpose(formation_dict_6["T"])

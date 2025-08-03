@@ -285,6 +285,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named circle
+
+# Build rule for target.
+circle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 circle
+.PHONY : circle
+
+# fast build rule for target.
+circle/fast:
+	$(MAKE) -f cq_11/CMakeFiles/circle.dir/build.make cq_11/CMakeFiles/circle.dir/build
+.PHONY : circle/fast
+
+#=============================================================================
 # Target rules for targets named offboard_sin_node
 
 # Build rule for target.
@@ -296,6 +309,19 @@ offboard_sin_node: cmake_check_build_system
 offboard_sin_node/fast:
 	$(MAKE) -f cq_11/CMakeFiles/offboard_sin_node.dir/build.make cq_11/CMakeFiles/offboard_sin_node.dir/build
 .PHONY : offboard_sin_node/fast
+
+#=============================================================================
+# Target rules for targets named pose
+
+# Build rule for target.
+pose: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pose
+.PHONY : pose
+
+# fast build rule for target.
+pose/fast:
+	$(MAKE) -f cq_11/CMakeFiles/pose.dir/build.make cq_11/CMakeFiles/pose.dir/build
+.PHONY : pose/fast
 
 #=============================================================================
 # Target rules for targets named vel
@@ -348,6 +374,19 @@ roscpp_generate_messages_cpp: cmake_check_build_system
 roscpp_generate_messages_cpp/fast:
 	$(MAKE) -f cq_11/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make cq_11/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named vel_leader
+
+# Build rule for target.
+vel_leader: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vel_leader
+.PHONY : vel_leader
+
+# fast build rule for target.
+vel_leader/fast:
+	$(MAKE) -f cq_11/CMakeFiles/vel_leader.dir/build.make cq_11/CMakeFiles/vel_leader.dir/build
+.PHONY : vel_leader/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_eus
@@ -527,11 +566,14 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... circle"
 	@echo "... offboard_sin_node"
+	@echo "... pose"
 	@echo "... vel"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... vel_leader"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_lisp"

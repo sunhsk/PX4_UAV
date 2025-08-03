@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+cq_11/CMakeFiles/circle.dir/rule:
+	cd /home/hsk/CQ/build && $(MAKE) -f CMakeFiles/Makefile2 cq_11/CMakeFiles/circle.dir/rule
+.PHONY : cq_11/CMakeFiles/circle.dir/rule
+
+# Convenience name for target.
+circle: cq_11/CMakeFiles/circle.dir/rule
+
+.PHONY : circle
+
+# fast build rule for target.
+circle/fast:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/circle.dir/build.make cq_11/CMakeFiles/circle.dir/build
+.PHONY : circle/fast
+
+# Convenience name for target.
 cq_11/CMakeFiles/offboard_sin_node.dir/rule:
 	cd /home/hsk/CQ/build && $(MAKE) -f CMakeFiles/Makefile2 cq_11/CMakeFiles/offboard_sin_node.dir/rule
 .PHONY : cq_11/CMakeFiles/offboard_sin_node.dir/rule
@@ -181,6 +196,21 @@ offboard_sin_node: cq_11/CMakeFiles/offboard_sin_node.dir/rule
 offboard_sin_node/fast:
 	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/offboard_sin_node.dir/build.make cq_11/CMakeFiles/offboard_sin_node.dir/build
 .PHONY : offboard_sin_node/fast
+
+# Convenience name for target.
+cq_11/CMakeFiles/pose.dir/rule:
+	cd /home/hsk/CQ/build && $(MAKE) -f CMakeFiles/Makefile2 cq_11/CMakeFiles/pose.dir/rule
+.PHONY : cq_11/CMakeFiles/pose.dir/rule
+
+# Convenience name for target.
+pose: cq_11/CMakeFiles/pose.dir/rule
+
+.PHONY : pose
+
+# fast build rule for target.
+pose/fast:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/pose.dir/build.make cq_11/CMakeFiles/pose.dir/build
+.PHONY : pose/fast
 
 # Convenience name for target.
 cq_11/CMakeFiles/vel.dir/rule:
@@ -241,6 +271,21 @@ roscpp_generate_messages_cpp: cq_11/CMakeFiles/roscpp_generate_messages_cpp.dir/
 roscpp_generate_messages_cpp/fast:
 	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make cq_11/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+cq_11/CMakeFiles/vel_leader.dir/rule:
+	cd /home/hsk/CQ/build && $(MAKE) -f CMakeFiles/Makefile2 cq_11/CMakeFiles/vel_leader.dir/rule
+.PHONY : cq_11/CMakeFiles/vel_leader.dir/rule
+
+# Convenience name for target.
+vel_leader: cq_11/CMakeFiles/vel_leader.dir/rule
+
+.PHONY : vel_leader
+
+# fast build rule for target.
+vel_leader/fast:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/vel_leader.dir/build.make cq_11/CMakeFiles/vel_leader.dir/build
+.PHONY : vel_leader/fast
 
 # Convenience name for target.
 cq_11/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
@@ -422,6 +467,60 @@ rosgraph_msgs_generate_messages_py/fast:
 	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make cq_11/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
+src/exercise/circle.o: src/exercise/circle.cpp.o
+
+.PHONY : src/exercise/circle.o
+
+# target to build an object file
+src/exercise/circle.cpp.o:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/circle.dir/build.make cq_11/CMakeFiles/circle.dir/src/exercise/circle.cpp.o
+.PHONY : src/exercise/circle.cpp.o
+
+src/exercise/circle.i: src/exercise/circle.cpp.i
+
+.PHONY : src/exercise/circle.i
+
+# target to preprocess a source file
+src/exercise/circle.cpp.i:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/circle.dir/build.make cq_11/CMakeFiles/circle.dir/src/exercise/circle.cpp.i
+.PHONY : src/exercise/circle.cpp.i
+
+src/exercise/circle.s: src/exercise/circle.cpp.s
+
+.PHONY : src/exercise/circle.s
+
+# target to generate assembly for a file
+src/exercise/circle.cpp.s:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/circle.dir/build.make cq_11/CMakeFiles/circle.dir/src/exercise/circle.cpp.s
+.PHONY : src/exercise/circle.cpp.s
+
+src/exercise/pose.o: src/exercise/pose.cpp.o
+
+.PHONY : src/exercise/pose.o
+
+# target to build an object file
+src/exercise/pose.cpp.o:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/pose.dir/build.make cq_11/CMakeFiles/pose.dir/src/exercise/pose.cpp.o
+.PHONY : src/exercise/pose.cpp.o
+
+src/exercise/pose.i: src/exercise/pose.cpp.i
+
+.PHONY : src/exercise/pose.i
+
+# target to preprocess a source file
+src/exercise/pose.cpp.i:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/pose.dir/build.make cq_11/CMakeFiles/pose.dir/src/exercise/pose.cpp.i
+.PHONY : src/exercise/pose.cpp.i
+
+src/exercise/pose.s: src/exercise/pose.cpp.s
+
+.PHONY : src/exercise/pose.s
+
+# target to generate assembly for a file
+src/exercise/pose.cpp.s:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/pose.dir/build.make cq_11/CMakeFiles/pose.dir/src/exercise/pose.cpp.s
+.PHONY : src/exercise/pose.cpp.s
+
 src/offboard_sin_node.o: src/offboard_sin_node.cpp.o
 
 .PHONY : src/offboard_sin_node.o
@@ -476,6 +575,33 @@ src/vel.cpp.s:
 	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/vel.dir/build.make cq_11/CMakeFiles/vel.dir/src/vel.cpp.s
 .PHONY : src/vel.cpp.s
 
+src/vel_leader.o: src/vel_leader.cpp.o
+
+.PHONY : src/vel_leader.o
+
+# target to build an object file
+src/vel_leader.cpp.o:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/vel_leader.dir/build.make cq_11/CMakeFiles/vel_leader.dir/src/vel_leader.cpp.o
+.PHONY : src/vel_leader.cpp.o
+
+src/vel_leader.i: src/vel_leader.cpp.i
+
+.PHONY : src/vel_leader.i
+
+# target to preprocess a source file
+src/vel_leader.cpp.i:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/vel_leader.dir/build.make cq_11/CMakeFiles/vel_leader.dir/src/vel_leader.cpp.i
+.PHONY : src/vel_leader.cpp.i
+
+src/vel_leader.s: src/vel_leader.cpp.s
+
+.PHONY : src/vel_leader.s
+
+# target to generate assembly for a file
+src/vel_leader.cpp.s:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/vel_leader.dir/build.make cq_11/CMakeFiles/vel_leader.dir/src/vel_leader.cpp.s
+.PHONY : src/vel_leader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -484,13 +610,16 @@ help:
 	@echo "... depend"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... circle"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... offboard_sin_node"
+	@echo "... pose"
 	@echo "... vel"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... vel_leader"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... list_install_components"
@@ -506,12 +635,21 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... src/exercise/circle.o"
+	@echo "... src/exercise/circle.i"
+	@echo "... src/exercise/circle.s"
+	@echo "... src/exercise/pose.o"
+	@echo "... src/exercise/pose.i"
+	@echo "... src/exercise/pose.s"
 	@echo "... src/offboard_sin_node.o"
 	@echo "... src/offboard_sin_node.i"
 	@echo "... src/offboard_sin_node.s"
 	@echo "... src/vel.o"
 	@echo "... src/vel.i"
 	@echo "... src/vel.s"
+	@echo "... src/vel_leader.o"
+	@echo "... src/vel_leader.i"
+	@echo "... src/vel_leader.s"
 .PHONY : help
 
 

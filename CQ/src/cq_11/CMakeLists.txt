@@ -135,6 +135,17 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(vel src/vel.cpp)
 add_executable(offboard_sin_node src/offboard_sin_node.cpp)
+add_executable(vel_leader src/vel_leader.cpp)
+add_executable(pose src/exercise/pose.cpp)
+add_executable(circle src/exercise/circle.cpp)
+
+
+# add_executable(genetic_algorithm src/task_allocation/genetic_algorithm.cpp)
+# add_executable(main src/task_allocation/main.cpp)
+# add_executable(individual src/task_allocation/individual.cpp)
+
+
+
 
 
 ## Rename C++ executable without prefix
@@ -145,7 +156,9 @@ add_executable(offboard_sin_node src/offboard_sin_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(main ${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(main ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(offboard_sin_node
@@ -154,6 +167,25 @@ target_link_libraries(offboard_sin_node
 target_link_libraries(vel
   ${catkin_LIBRARIES}
 )
+target_link_libraries(vel_leader
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(pose
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(circle
+  ${catkin_LIBRARIES}
+)
+# target_link_libraries(main
+#   ${catkin_LIBRARIES}
+# )
+# target_link_libraries(genetic_algorithm
+#   ${catkin_LIBRARIES}
+# )
+# target_link_libraries(individual
+#   ${catkin_LIBRARIES}
+# )
+
 
 
 #############
@@ -171,8 +203,13 @@ catkin_install_python(PROGRAMS
   scripts/pose_ground_truth/get_local_pose.py
   scripts/formation/follower.py
   scripts/formation/formation_dict.py
+  scripts/formation/avoid.py
   scripts/formation/leader.py
   scripts/multi_takeoff.py
+  scripts/main/main.py
+  scripts/main/take_off.py
+
+  
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

@@ -9,7 +9,20 @@ from geometry_msgs.msg import TwistStamped
 from std_msgs.msg import String, Int32MultiArray, Float32MultiArray
 import sys
 import numpy
-if sys.argv[2] == '6':
+# if sys.argv[2] == '6':
+#     from formation_dict import formation_dict_6 as formation_dict
+# elif sys.argv[2] == '9':
+#     from formation_dict import formation_dict_9 as formation_dict
+# elif sys.argv[2] == '18':
+#     from formation_dict import formation_dict_18 as formation_dict
+# else:
+#     print("Only 6, 9 and 18 UAVs are supported.")
+
+if  sys.argv[2] == '3':
+    from formation_dict import formation_dict_3 as formation_dict
+elif  sys.argv[2] == '4':
+    from formation_dict import formation_dict_4 as formation_dict
+elif  sys.argv[2] == '6':
     from formation_dict import formation_dict_6 as formation_dict
 elif sys.argv[2] == '9':
     from formation_dict import formation_dict_9 as formation_dict
@@ -41,7 +54,7 @@ class Leader:
         #self.pose_sub = rospy.Subscriber(uav_type+'_'+str(self.id)+"/mavros/local_position/pose", PoseStamped , self.pose_callback, queue_size=1) #订阅无人机自身的位置
         #self.cmd_vel_sub = rospy.Subscriber("/xtdrone/leader/cmd_vel_flu", Twist, self.cmd_vel_callback, queue_size=1)    #    keyboard send leader
         self.pose_sub = rospy.Subscriber(uav_type+'_'+str(self.id)+"/mavros/vision_pose/pose", PoseStamped , self.pose_callback, queue_size=1) #订阅无人机自身的位置
-        self.cmd_vel_sub = rospy.Subscriber(uav_type+'_'+str(self.id)+"mavros/local_position/velocity_local", TwistStamped, self.cmd_vel_callback, queue_size=1)    #    keyboard send leader
+        self.cmd_vel_sub = rospy.Subscriber(uav_type+'_'+str(self.id)+"/mavros/local_position/velocity_local", TwistStamped, self.cmd_vel_callback, queue_size=1)    #    keyboard send leader
         self.avoid_vel_sub = rospy.Subscriber("/xtdrone/"+uav_type+'_'+str(self.id)+"/avoid_vel", Vector3, self.avoid_vel_callback, queue_size=1)  #订阅避障模块发来的避障速度。   暂时没用到
         self.leader_cmd_sub = rospy.Subscriber("/xtdrone/leader/cmd",String, self.cmd_callback, queue_size=1)    # leader state
 
@@ -75,8 +88,10 @@ class Leader:
             #根据 KM 算法的匹配结果，生成新的无人机目标位置矩阵 `new_formation`。
             #基于新的目标位置，构造通信拓扑邻接矩阵（谁能听谁的）。
             self.new_formation = self.get_new_formation(self.changed_id, formation_dict[self.formation_config])
+            print("leader_new_formation:")
             print(self.new_formation)
             self.communication_topology = self.get_communication_topology(self.new_formation)
+            print("leader_communication_topology:")
             print(self.communication_topology)
             self.origin_formation = self.new_formation     #更新 `origin_formation`，用于下一次指派变换的起点。
         else:

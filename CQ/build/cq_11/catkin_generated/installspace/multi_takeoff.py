@@ -3,13 +3,17 @@ import rospy
 import threading
 from mavros_msgs.srv import CommandBool, SetMode
 from geometry_msgs.msg import PoseStamped
+import sys
 
-UAV_NUM = 6
-TAKEOFF_Z = 2.0
+uav_type = sys.argv[1]
+a = int(sys.argv[2])
+UAV_NUM = a
+TAKEOFF_Z = 10.0
 SETPOINT_HZ = 20
 
+
 def publish_setpoint_loop(uav_id, stop_event):
-    topic = "/iris_%d/mavros/setpoint_position/local" % uav_id
+    topic = uav_type + "_%d/mavros/setpoint_position/local" % uav_id
     pub = rospy.Publisher(topic, PoseStamped, queue_size=10)
     rate = rospy.Rate(SETPOINT_HZ)
     pose = PoseStamped()
@@ -25,7 +29,7 @@ def publish_setpoint_loop(uav_id, stop_event):
         rate.sleep()
 
 def arm_and_set_mode(uav_id):
-    ns = "/iris_" + str(uav_id)
+    ns = uav_type + "_" + str(uav_id)
     rospy.wait_for_service(ns + "/mavros/cmd/arming")
     rospy.wait_for_service(ns + "/mavros/set_mode")
     try:
@@ -68,7 +72,7 @@ if __name__ == '__main__':
     for i in range(UAV_NUM):
         arm_and_set_mode(i)
 
-    rospy.loginfo("All UAVs are in OFFBOARD and hovering at 2m. Press Ctrl+C to stop.")
+    rospy.loginfo("All UAVs are in OFFBOARD and hovering at 10m. Press Ctrl+C to stop.")
 
     try:
         rospy.spin()  # 保持主线程运行

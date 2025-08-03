@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hsk/CQ/src/cq_11/include/cq_11/genetic_algorithm.h
+vector
+-
+random
+-
+algorithm
+-
+cq_11/target.h
+/home/hsk/CQ/src/cq_11/include/cq_11/cq_11/target.h
+cq_11/uav.h
+/home/hsk/CQ/src/cq_11/include/cq_11/cq_11/uav.h
+cq_11/individual.h
+/home/hsk/CQ/src/cq_11/include/cq_11/cq_11/individual.h
+
+/home/hsk/CQ/src/cq_11/include/cq_11/individual.h
+vector
+-
+random
+-
+cmath
+-
+cq_11/target.h
+/home/hsk/CQ/src/cq_11/include/cq_11/cq_11/target.h
+cq_11/uav.h
+/home/hsk/CQ/src/cq_11/include/cq_11/cq_11/uav.h
+
+/home/hsk/CQ/src/cq_11/include/cq_11/target.h
+
+/home/hsk/CQ/src/cq_11/include/cq_11/uav.h
+
+/home/hsk/CQ/src/cq_11/src/task_allocation/genetic_algorithm.cpp
+cq_11/genetic_algorithm.h
+/home/hsk/CQ/src/cq_11/src/task_allocation/cq_11/genetic_algorithm.h
+

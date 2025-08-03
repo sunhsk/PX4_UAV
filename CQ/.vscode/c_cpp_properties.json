@@ -25,7 +25,8 @@
         "/home/hsk/catkin_ws/src/ego_planner/traj_utils/include/**",
         "/home/hsk/catkin_ws/src/ego_planner/Utils/uav_utils/include/**",
         "/home/hsk/catkin_ws/src/velodyne_gazebo_plugins/include/**",
-        "/usr/include/**"
+        "/usr/include/**",
+        "/home/hsk/CQ/src/cq_11/include/**"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",

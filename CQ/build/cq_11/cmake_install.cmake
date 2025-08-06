@@ -92,3 +92,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cq_11" TYPE PROGRAM FILES "/home/hsk/CQ/build/cq_11/catkin_generated/installspace/take_off.py")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cq_11" TYPE PROGRAM FILES "/home/hsk/CQ/build/cq_11/catkin_generated/installspace/uav_tracking_c.py")
+endif()
+

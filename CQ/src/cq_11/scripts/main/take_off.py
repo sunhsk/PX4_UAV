@@ -58,9 +58,9 @@ def multi_uav_offboard_hover(uav_type, uav_ids, takeoff_z=TAKEOFF_Z):
     threads = []
 
     for uav_id in uav_ids:
-        evt = threading.Event()
+        evt = threading.Event()   #每个 Event 对象对应一个无人机的发布线程的“停止信号”。
         stop_events.append(evt)
-        t = threading.Thread(target=publish_setpoint_loop, args=(uav_type, uav_id, takeoff_z, evt))
+        t = threading.Thread(target=publish_setpoint_loop, args=(uav_type, uav_id, takeoff_z, evt))  #类型是 列表，里面是多个 threading.Thread 对象。
         t.start()
         threads.append(t)
 

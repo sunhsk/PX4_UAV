@@ -138,6 +138,7 @@ add_executable(offboard_sin_node src/offboard_sin_node.cpp)
 add_executable(vel_leader src/vel_leader.cpp)
 add_executable(pose src/exercise/pose.cpp)
 add_executable(circle src/exercise/circle.cpp)
+add_executable(enemy src/main_c/enemy.cpp)
 
 
 # add_executable(genetic_algorithm src/task_allocation/genetic_algorithm.cpp)
@@ -176,6 +177,9 @@ target_link_libraries(pose
 target_link_libraries(circle
   ${catkin_LIBRARIES}
 )
+target_link_libraries(enemy
+  ${catkin_LIBRARIES}
+)
 # target_link_libraries(main
 #   ${catkin_LIBRARIES}
 # )
@@ -201,13 +205,23 @@ catkin_install_python(PROGRAMS
   scripts/uav_tracking.py
   scripts/uav_tracking_b.py
   scripts/pose_ground_truth/get_local_pose.py
-  scripts/formation/follower.py
-  scripts/formation/formation_dict.py
-  scripts/formation/avoid.py
-  scripts/formation/leader.py
+
+  # scripts/formation/follower.py
+  # scripts/formation/formation_dict.py
+  # scripts/formation/avoid.py
+  # scripts/formation/leader.py
+
+  scripts/main/formation_b/follower.py
+  scripts/main/formation_b/formation_dict.py
+  scripts/main/formation_b/avoid.py
+  scripts/main/formation_b/leader.py
+
+
   scripts/multi_takeoff.py
   scripts/main/main.py
   scripts/main/take_off.py
+
+  scripts/main/tacking/uav_tracking_c.py
 
   
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

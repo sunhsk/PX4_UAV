@@ -1,0 +1,10 @@
+<launch>
+    <arg name="uav_type" default="iris"/>
+    <arg name="uav_num" default="4"/>
+    <node name="leader_node" pkg="your_package" type="leader.py" output="screen" args="$(arg uav_type) $(arg uav_num)" />
+    <node name="avoid_node" pkg="your_package" type="avoid.py" output="screen" args="$(arg uav_type) $(arg uav_num) vel" />
+    <node name="follower_1" pkg="your_package" type="follower.py" output="screen" args="$(arg uav_type) 1 $(arg uav_num)" />
+    <node name="follower_2" pkg="your_package" type="follower.py" output="screen" args="$(arg uav_type) 2 $(arg uav_num)" />
+    <node name="follower_3" pkg="your_package" type="follower.py" output="screen" args="$(arg uav_type) 3 $(arg uav_num)" />
+    <!-- 如有更多follower，继续加 -->
+</launch>

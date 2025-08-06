@@ -1,10 +1,46 @@
 import numpy as np
 
+import rospy
+from geometry_msgs.msg import PoseStamped
 
-formation_dict_3 = {"origin":np.array([[3,0,0],[0,3,0]]),"circle":np.array([[-1,1.732,0],[-1,-1.732,0]]),"triangle": np.array([[-1.5,-2.55,0],[1.5,-2.55,0]])}
+self_pose_a = PoseStamped() 
+self_pose_b = PoseStamped() 
+self_pose_c = PoseStamped() 
+
+def self_pose_callback_a(data):
+    global self_pose_a
+    self_pose_a = data
+def self_pose_callback_b(data):
+    global self_pose_b
+    self_pose_b = data
+def self_pose_callback_c(data):
+    global self_pose_c
+    self_pose_c = data
+
+rospy.Subscriber('iris_' + str(2) + '/mavros/vision_pose/pose',
+                     PoseStamped, self_pose_callback_a, queue_size=1)
+rospy.Subscriber('iris_' + str(3) + '/mavros/vision_pose/pose',
+                     PoseStamped, self_pose_callback_b, queue_size=1)
+rospy.Subscriber('iris_' + str(4) + '/mavros/vision_pose/pose',
+                     PoseStamped, self_pose_callback_c, queue_size=1)
+
+x_1 = self_pose_a.pose.position.x - self_pose_b.pose.position.x
+y_1 = self_pose_a.pose.position.y - self_pose_b.pose.position.y
+z_1 = self_pose_a.pose.position.z - self_pose_b.pose.position.z
+
+x_2 = self_pose_a.pose.position.x - self_pose_c.pose.position.x
+y_2 = self_pose_a.pose.position.y - self_pose_c.pose.position.y
+z_2 = self_pose_a.pose.position.z - self_pose_c.pose.position.z
+
+formation_dict_3 = {"origin":np.array([[x_1,y_1,z_1],[x_2,y_2,z_2]]),"circle":np.array([[-1,1.732,0],[-1,-1.732,0]]),"triangle": np.array([[-1.5,-2.55,0],[1.5,-2.55,0]])}
 formation_dict_3["origin"] = np.transpose(formation_dict_3["origin"])
 formation_dict_3["circle"] = np.transpose(formation_dict_3["circle"])
 formation_dict_3["triangle"] = np.transpose(formation_dict_3["triangle"])
+
+# formation_dict_3 = {"origin":np.array([[3,0,0],[0,3,0]]),"circle":np.array([[-1,1.732,0],[-1,-1.732,0]]),"triangle": np.array([[-1.5,-2.55,0],[1.5,-2.55,0]])}
+# formation_dict_3["origin"] = np.transpose(formation_dict_3["origin"])
+# formation_dict_3["circle"] = np.transpose(formation_dict_3["circle"])
+# formation_dict_3["triangle"] = np.transpose(formation_dict_3["triangle"])
 
 formation_dict_4 = {"origin":np.array([[3,0,0],[0,3,0],[3,3,0]]),"circle_enemy": np.array([[-1.5,-2,1],[1.5,-2,1],[0,2,1]])}
 formation_dict_4["origin"] = np.transpose(formation_dict_4["origin"])

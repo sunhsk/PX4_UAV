@@ -18,18 +18,24 @@ import numpy
 # else:
 #     print("Only 6, 9 and 18 UAVs are supported.")
 
-if  sys.argv[2] == '3':
-    from formation_dict import formation_dict_3 as formation_dict
-elif  sys.argv[2] == '4':
-    from formation_dict import formation_dict_4 as formation_dict
-elif  sys.argv[2] == '6':
-    from formation_dict import formation_dict_6 as formation_dict
-elif sys.argv[2] == '9':
-    from formation_dict import formation_dict_9 as formation_dict
-elif sys.argv[2] == '18':
-    from formation_dict import formation_dict_18 as formation_dict
-else:
-    print("Only 6, 9 and 18 UAVs are supported.")
+# if  sys.argv[2] == '3':
+#     from formation_dict import formation_dict_3 as formation_dict
+# elif  sys.argv[2] == '4':
+#     from formation_dict import formation_dict_4 as formation_dict
+# elif  sys.argv[2] == '6':
+#     from formation_dict import formation_dict_6 as formation_dict
+# elif sys.argv[2] == '9':
+#     from formation_dict import formation_dict_9 as formation_dict
+# elif sys.argv[2] == '18':
+#     from formation_dict import formation_dict_18 as formation_dict
+# else:
+#     print("Only 6, 9 and 18 UAVs are supported.")
+
+from formation_dict import formation_dict_3 as formation_dict
+from formation_dict import formation_dict_4 as formation_dict
+from formation_dict import formation_dict_6 as formation_dict
+from formation_dict import formation_dict_9 as formation_dict
+from formation_dict import formation_dict_18 as formation_dict
 
 class Leader:
 
@@ -271,7 +277,7 @@ class Leader:
 
 
     def loop(self):
-        rospy.init_node('leader')
+        # rospy.init_node('leader')
         rate = rospy.Rate(self.f)
         while True:
             #速度命令（cmd_vel_enu）可以加上避障速度（目前注释掉了,no requirement）
@@ -301,6 +307,9 @@ class Leader:
             except:
                 continue
 
-if __name__ == '__main__':
-    leader = Leader(sys.argv[1], 0, int(sys.argv[2]))
-    leader.loop()   
+def run_leader(uav_type, leader_id, uav_num):
+    leader = Leader(uav_type, leader_id, uav_num)
+    leader.loop()
+# if __name__ == '__main__':
+#     leader = Leader(sys.argv[1], 0, int(sys.argv[2]))
+#     leader.loop()   

@@ -37,6 +37,7 @@
 /home/hsk/CQ/build/gtest/googletest/CMakeFiles/gtest.dir
 /home/hsk/CQ/build/cq_11/CMakeFiles/install/local.dir
 /home/hsk/CQ/build/cq_11/CMakeFiles/test.dir
+/home/hsk/CQ/build/cq_11/CMakeFiles/enemy.dir
 /home/hsk/CQ/build/cq_11/CMakeFiles/circle.dir
 /home/hsk/CQ/build/cq_11/CMakeFiles/rebuild_cache.dir
 /home/hsk/CQ/build/cq_11/CMakeFiles/edit_cache.dir

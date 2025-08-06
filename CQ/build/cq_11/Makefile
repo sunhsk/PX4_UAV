@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+cq_11/CMakeFiles/enemy.dir/rule:
+	cd /home/hsk/CQ/build && $(MAKE) -f CMakeFiles/Makefile2 cq_11/CMakeFiles/enemy.dir/rule
+.PHONY : cq_11/CMakeFiles/enemy.dir/rule
+
+# Convenience name for target.
+enemy: cq_11/CMakeFiles/enemy.dir/rule
+
+.PHONY : enemy
+
+# fast build rule for target.
+enemy/fast:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/enemy.dir/build.make cq_11/CMakeFiles/enemy.dir/build
+.PHONY : enemy/fast
+
+# Convenience name for target.
 cq_11/CMakeFiles/circle.dir/rule:
 	cd /home/hsk/CQ/build && $(MAKE) -f CMakeFiles/Makefile2 cq_11/CMakeFiles/circle.dir/rule
 .PHONY : cq_11/CMakeFiles/circle.dir/rule
@@ -521,6 +536,33 @@ src/exercise/pose.cpp.s:
 	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/pose.dir/build.make cq_11/CMakeFiles/pose.dir/src/exercise/pose.cpp.s
 .PHONY : src/exercise/pose.cpp.s
 
+src/main_c/enemy.o: src/main_c/enemy.cpp.o
+
+.PHONY : src/main_c/enemy.o
+
+# target to build an object file
+src/main_c/enemy.cpp.o:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/enemy.dir/build.make cq_11/CMakeFiles/enemy.dir/src/main_c/enemy.cpp.o
+.PHONY : src/main_c/enemy.cpp.o
+
+src/main_c/enemy.i: src/main_c/enemy.cpp.i
+
+.PHONY : src/main_c/enemy.i
+
+# target to preprocess a source file
+src/main_c/enemy.cpp.i:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/enemy.dir/build.make cq_11/CMakeFiles/enemy.dir/src/main_c/enemy.cpp.i
+.PHONY : src/main_c/enemy.cpp.i
+
+src/main_c/enemy.s: src/main_c/enemy.cpp.s
+
+.PHONY : src/main_c/enemy.s
+
+# target to generate assembly for a file
+src/main_c/enemy.cpp.s:
+	cd /home/hsk/CQ/build && $(MAKE) -f cq_11/CMakeFiles/enemy.dir/build.make cq_11/CMakeFiles/enemy.dir/src/main_c/enemy.cpp.s
+.PHONY : src/main_c/enemy.cpp.s
+
 src/offboard_sin_node.o: src/offboard_sin_node.cpp.o
 
 .PHONY : src/offboard_sin_node.o
@@ -610,6 +652,7 @@ help:
 	@echo "... depend"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... enemy"
 	@echo "... circle"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
@@ -641,6 +684,9 @@ help:
 	@echo "... src/exercise/pose.o"
 	@echo "... src/exercise/pose.i"
 	@echo "... src/exercise/pose.s"
+	@echo "... src/main_c/enemy.o"
+	@echo "... src/main_c/enemy.i"
+	@echo "... src/main_c/enemy.s"
 	@echo "... src/offboard_sin_node.o"
 	@echo "... src/offboard_sin_node.i"
 	@echo "... src/offboard_sin_node.s"

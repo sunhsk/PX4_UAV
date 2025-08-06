@@ -81,6 +81,9 @@ class Follower:
             except:
                 continue
 
-if __name__ == '__main__':
-    follower = Follower(sys.argv[1],int(sys.argv[2]), int(sys.argv[3]))
-    follower.loop()   
+def run_follower(uav_type, uav_id, uav_num):
+    follower = Follower(uav_type, uav_id, uav_num)
+    follower.loop()
+# if __name__ == '__main__':
+#     follower = Follower(sys.argv[1],int(sys.argv[2]), int(sys.argv[3]))
+#     follower.loop()   

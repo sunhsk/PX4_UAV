@@ -285,6 +285,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named enemy
+
+# Build rule for target.
+enemy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 enemy
+.PHONY : enemy
+
+# fast build rule for target.
+enemy/fast:
+	$(MAKE) -f cq_11/CMakeFiles/enemy.dir/build.make cq_11/CMakeFiles/enemy.dir/build
+.PHONY : enemy/fast
+
+#=============================================================================
 # Target rules for targets named circle
 
 # Build rule for target.
@@ -566,6 +579,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... enemy"
 	@echo "... circle"
 	@echo "... offboard_sin_node"
 	@echo "... pose"
